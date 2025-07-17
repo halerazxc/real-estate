@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { motion } from "motion/react"
 
 const Customer = () => {
   const [isBeginning, setIsBeginning] = useState(true)
@@ -11,7 +12,12 @@ const Customer = () => {
   const swiperRef = useRef(null)
 
   return (
-    <div id='Testimonials' className="flex flex-col justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: +200 }}
+      transition={{ duration: 0.75 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      id='Testimonials' className="flex flex-col justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden">
       <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'>
         Customer <span className='font-[200] underline'>Testimonials</span>
       </h1>
@@ -22,9 +28,8 @@ const Customer = () => {
       {/* Кнопки навигации */}
       <div className="flex justify-end items-center mb-4 gap-2">
         <button
-          className={`customer-swiper-prev p-3 rounded transition ${
-            isBeginning ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-200 hover:bg-gray-300 cursor-pointer'
-          }`}
+          className={`customer-swiper-prev p-3 rounded transition ${isBeginning ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-200 hover:bg-gray-300 cursor-pointer'
+            }`}
           disabled={isBeginning}
           onClick={() => swiperRef.current?.slidePrev()}
         >
@@ -35,9 +40,8 @@ const Customer = () => {
           />
         </button>
         <button
-          className={`customer-swiper-next p-3 rounded transition ${
-            isEnd ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-200 hover:bg-gray-300 cursor-pointer'
-          }`}
+          className={`customer-swiper-next p-3 rounded transition ${isEnd ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-200 hover:bg-gray-300 cursor-pointer'
+            }`}
           disabled={isEnd}
           onClick={() => swiperRef.current?.slideNext()}
         >
@@ -93,7 +97,7 @@ const Customer = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   )
 }
 

@@ -3,12 +3,18 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { motion } from "motion/react"
 
 import { assets, projectsData } from '../assets/assets.tsx'
 
 const Projects = () => {
   return (
-    <div id='Projects' className="flex flex-col justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, x: +300 }}
+      transition={{ duration: 0.75 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      id='Projects' className="flex flex-col justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden">
       <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'>
         Projects <span className='font-[200] underline'>Completed</span>
       </h1>
@@ -34,7 +40,7 @@ const Projects = () => {
           prevEl: '.custom-swiper-prev',
         }}
 
-         autoplay={{
+        autoplay={{
           delay: 1500,
           disableOnInteraction: false,
         }}
@@ -73,7 +79,7 @@ const Projects = () => {
 
 
       </Swiper>
-    </div>
+    </motion.div>
   )
 }
 
