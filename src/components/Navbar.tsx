@@ -16,7 +16,7 @@ const Navbar = () => {
 
   }, [showMobileNav])
   return (
-    <div className='absolute top-0 left-0 w-full z-10'>
+    <div className='md:absolute fixed top-0 left-0 w-full z-[100] md:backdrop-blur-0 md:bg-inherit md:border-none backdrop-blur-md bg-black/50 border-b border-gray-200 shadow-sm transition-colors duration-300'>
       <div className='container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent'>
         <img src={assets.logo} alt="logo" />
         <ul className='hidden md:flex gap-7 text-white'>
@@ -29,7 +29,8 @@ const Navbar = () => {
         <img onClick={() => setMobileNav(true)} src={assets.menu_icon} className='md:hidden w-7 cursor-pointer' alt="" />
       </div>
       {/* mobile navigation */}
-      <div className={` ${showMobileNav ? 'fixed' : 'hidden'} right-0 top-0 w-full h-1/2 bottom-0 overflow-hidden bg-white transition-all`}>
+      <div className={`fixed left-0 top-0 w-full h-screen z-[100] bg-white transform transition-transform duration-300 ease-in-out
+      ${showMobileNav ? 'translate-x-0' : 'hidden translate-x-full '}`}>
         <div className='flex justify-end p-6 cursor-pointer'>
           <img onClick={() => setMobileNav(false)} className='w-6' src={assets.cross_icon} alt="cross_icon" />
         </div>
