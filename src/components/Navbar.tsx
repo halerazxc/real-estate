@@ -37,8 +37,8 @@ const Navbar = () => {
         <ul className='flex flex-col justify-center items-center gap-7 text-black'>
           <a onClick={() => setMobileNav(false)} href="#Header" className='cursor-pointer hover:text-gray-400'>Home</a>
           <a onClick={() => setMobileNav(false)} href="#About" className='cursor-pointer hover:text-gray-400'>About</a>
-          <a onClick={() => setMobileNav(false)} href="#Header" className='cursor-pointer hover:text-gray-400'>Projects</a>
-          <a onClick={() => setMobileNav(false)} href="#Header" className='cursor-pointer hover:text-gray-400'>Testimonials</a>
+          <a onClick={() => setMobileNav(false)} href="#Projects" className='cursor-pointer hover:text-gray-400'>Projects</a>
+          <a onClick={() => setMobileNav(false)} href="#Testimonials" className='cursor-pointer hover:text-gray-400'>Testimonials</a>
         </ul>
       </div>
     </div>
