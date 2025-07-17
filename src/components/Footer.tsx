@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer className='bg-gray-900 text-gray-400 pt-14 px-6 md:px-20 lg:px-32 w-full'>
       <div className='container mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-0'>
-
         {/* Логотип и описание */}
         <div className='md:w-1/3 flex flex-col'>
           <img src={assets.logo_dark} alt="Logo" className='mb-6 w-36 md:w-44' />
@@ -12,7 +11,6 @@ const Footer = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut facere adipisci maxime excepturi dolorem, quaerat officia, porro minus voluptatibus, soluta quibusdam ut quae est veniam dolorum mollitia ipsam magni. Inventore.
           </p>
         </div>
-
         {/* Меню компании */}
         <div className='md:w-1/5'>
           <h3 className='text-white text-lg font-semibold mb-6'>Company</h3>
@@ -23,7 +21,6 @@ const Footer = () => {
             <li><a className='hover:text-white transition-colors' href="">Privacy policy</a></li>
           </ul>
         </div>
-
         {/* Подписка на рассылку */}
         <div className='md:w-1/3'>
           <h3 className='text-white text-lg font-semibold mb-6'>Subscribe to our newsletter</h3>
@@ -45,7 +42,6 @@ const Footer = () => {
             </button>
           </form>
         </div>
-
       </div>
       <div className='border-t border-gray-700 py-4 mt-10 text-center text-gray-500'>
         Copyright {new Date().getFullYear()} © GreatStack. All Right Reserved.
